@@ -71,7 +71,7 @@ Redirect 301 /shop-2/ https://twoaveragegamers.com/
 Redirect 301 /shop-3/ https://twoaveragegamers.com/
 ```
 
-Thy the `RedirectMatch` replacement if it doesn't take:
+Try the `RedirectMatch` replacement if it doesn't take:
 
 ```
 RedirectMatch 301 /cart/ https://twoaveragegamers.com/
