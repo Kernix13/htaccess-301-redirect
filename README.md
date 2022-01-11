@@ -18,7 +18,7 @@ define( 'WC_REMOVE_ALL_DATA', true );
 
 Is Bluehost running on Apache or a different server?
 
-This is the basic format from CSS Tricks [301 Redirects article](https://css-tricks.com/snippets/htaccess/301-redirects/)  (Apache servers obly):
+This is the basic format from CSS Tricks [301 Redirects article](https://css-tricks.com/snippets/htaccess/301-redirects/)  (Apache servers only):
 
 ```
 Redirect 301 /oldpage.html http://www.yoursite.com/newpage.html
