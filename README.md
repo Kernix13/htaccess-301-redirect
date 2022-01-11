@@ -7,7 +7,7 @@
 - If you deactivate and delete the plugin from WordPress, you only remove the plugin and its files. Your settings, orders, products, pages, etc… will still exist in the database
 - If you need to remove ALL WooCommerce data, including products, order data, etc., you need to be able to modify the site’s `wp-config.php` file before deactivating and deleting the plugin
 
-> To fully remove all WooCommerce data from your WordPress site, open your site’s wp-config.php file. Scroll down until you fine the the bottom, add the following constant on its own line above the “That’s all, stop editing” comment.
+> To fully remove all WooCommerce data from your WordPress site, open your site’s `wp-config.php` file. Scroll down until you fine the the bottom, add the following constant on its own line above the “That’s all, stop editing” comment.
 
 ```
 define( 'WC_REMOVE_ALL_DATA', true );
