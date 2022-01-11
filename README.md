@@ -13,6 +13,7 @@
 define( 'WC_REMOVE_ALL_DATA', true );
 /* That’s all, stop editing! Happy publishing. */ 
 ```
+** HUGE NOTE**: You have to have the plugin installed before you add the code to `wp-config.php`. Then when you deactivate the plugin and remove it the cod will run and remove everything (see bottom of this file).
 
 ## Redirect syntax
 
@@ -123,4 +124,32 @@ In case they are needed:
 ```
 ns1.bluehost.com	162.88.60.37
 ns2.bluehost.com	162.88.61.37
+```
+
+## The deactivation code
+
+Here is the [Woocommerce Github code](https://github.com/woocommerce/woocommerce/blob/master/uninstall.php) for the snippet added to `wp-config.php`.
+
+Looks like the uninstall.php file is doing the following things:
+
+1. Unschedules all events attached to woo hooks using wp_clear_scheduled_hook starting on line 15
+2. Dropping Woocommerce admin tables using ::drop_tables() on line 31
+3. Removing "roles + caps" using ::remove_roles() on line 36 
+4. Trashing pages using wp_trash_post( get_option ( 'various woocommerce page id names' ) ) starting on line 39
+5. doing something with attributes if there are tables prefixed with woocommerce_... starting on line 48
+6. dropping woo tables again, this time I assume for the plugin as opposed to the admin area on line 55 
+7. delete woo records in the options table lines 58 & 59
+8. delete woo records in the usermeta table line 62 
+9. delete posts and data (posts, postmeta, comments, commentsmeta) starting on line 65
+10. conditional dete for earlier versions of WP 
+11. foreach delete of term attributes
+12. delete orphan records, terms, and term meta
+13. wp_cache_flush
+
+SQL example1 to find woocommerce fields in the `options` table:
+
+```sql
+SELECT * FROM `wpaa_options` WHERE option_name LIKE 'woocommerce\_%' OR option_name LIKE 'widget\_woocommerce\_%'
+SELECT * FROM `wpaa_options` WHERE option_name LIKE 'woocommerce\_%'
+SELECT * FROM `wpaa_options` WHERE option_name LIKE 'widget\_woocommerce\_%'
 ```
