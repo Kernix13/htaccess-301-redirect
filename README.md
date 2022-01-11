@@ -154,4 +154,6 @@ SELECT * FROM `wpaa_options` WHERE option_name LIKE 'woocommerce\_%'
 SELECT * FROM `wpaa_options` WHERE option_name LIKE 'widget\_woocommerce\_%'
 ```
 
-The last 2 SQL statements are just to run individual queries, but then you proabably know that if you know how to run queries in phpmyadmin. I had 127 records in total when I ran the combined query. Then I commented out the snippet in `wp-config.php`, installed Woo, un-commented the code in config, and finally deactivated and removed Woo. _ ran the query again and it returned **ZERO** records.
+The last 2 SQL statements are just to run individual queries, but then you proabably know that if you know how to run queries in phpmyadmin. I had 127 records in total when I ran the combined query. Then I commented out the snippet in `wp-config.php`, installed Woo, un-commented the code in config, and finally deactivated and removed Woo. I ran the query again and it returned **ZERO** records.
+
+So the removal process ran by the add to the config file is hooking onto the deactivation and removal of the plugin. 
