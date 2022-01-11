@@ -115,3 +115,12 @@ I had one already done with `RedirectMatch`:
 https://fairmountpetservice.com/Blog/shop/
 RedirectMatch 301 /shop/ https://fairmountpetservice.com/Blog/
 ```
+
+## Bluehost Nameservers
+
+In case they are needed:
+
+```
+ns1.bluehost.com	162.88.60.37
+ns2.bluehost.com	162.88.61.37
+```
