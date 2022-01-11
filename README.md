@@ -66,7 +66,6 @@ Redirect 301 /checkout-3/ https://twoaveragegamers.com/
 Redirect 301 /my-account/ https://twoaveragegamers.com/
 Redirect 301 /my-account-2/ https://twoaveragegamers.com/
 Redirect 301 /my-account-3/ https://twoaveragegamers.com/
-
 Redirect 301 /shop/ https://twoaveragegamers.com/
 Redirect 301 /shop-2/ https://twoaveragegamers.com/
 Redirect 301 /shop-3/ https://twoaveragegamers.com/
