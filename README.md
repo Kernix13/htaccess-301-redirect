@@ -7,11 +7,14 @@ Redirect 301 /oldpage.html http://www.yoursite.com/newpage.html
 Redirect 301 /oldpage2.html http://www.yoursite.com/folder/
 ```
 
-On Siteground I have the following:
+On Siteground I have the following examples where Siteground added the `RedirectMatch` redirects from the redirect tool in cPanel:
 
 ```
 RedirectMatch 301 /Blog/pet-services-blog/pet-business/online-business-listing-review-sites-pet-business/ /Blog/category/pet-services-blog/pet-business/
+RedirectMatch 301 /oldpage2.html http://www.yoursite.com/folder/
+
 Redirect 301 fairmountpetservice.com/index.html https://fairmountpetservice.com/Blog/index/
+Redirect 301 /oldpage.html http://www.yoursite.com/newpage.html
 ```
 
 Here are the pages I need to redirect:
@@ -32,7 +35,7 @@ https://twoaveragegamers.com/shop-2/
 https://twoaveragegamers.com/shop-3/
 ```
 
-Standard ormatted 301's:
+Standard formatted 301's:
 
 ```
 Redirect 301 /cart/ https://twoaveragegamers.com/
