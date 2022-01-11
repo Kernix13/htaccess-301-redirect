@@ -89,7 +89,7 @@ RedirectMatch 301 /shop-2/ https://twoaveragegamers.com/
 RedirectMatch 301 /shop-3/ https://twoaveragegamers.com/
 ```
 
-Here are the redirects for my pet service site, both versions: https://fairmountpetservice.com/Blog/
+Here are the redirects for my pet service site, both versions:
 
 ```
 https://fairmountpetservice.com/Blog/cart/
