@@ -146,6 +146,8 @@ Looks like the uninstall.php file is doing the following things:
 12. delete orphan records, terms, and term meta
 13. wp_cache_flush
 
+## MySQL queries to check for Woocommerce fields
+
 SQL example1 to find woocommerce fields in the `options` table:
 
 ```sql
