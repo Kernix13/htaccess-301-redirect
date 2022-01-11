@@ -70,3 +70,30 @@ RedirectMatch 301 /shop/ https://twoaveragegamers.com/
 RedirectMatch 301 /shop-2/ https://twoaveragegamers.com/
 RedirectMatch 301 /shop-3/ https://twoaveragegamers.com/
 ```
+
+Here are the redirects for my pet service site, both versions: https://fairmountpetservice.com/Blog/
+
+```
+https://fairmountpetservice.com/Blog/cart/
+Redirect 301 /cart/ https://fairmountpetservice.com/Blog/
+RedirectMatch 301 /cart/ https://fairmountpetservice.com/Blog/
+
+https://fairmountpetservice.com/Blog/checkout/
+Redirect 301 /checkout/ https://fairmountpetservice.com/Blog/
+RedirectMatch 301 /checkout/ https://fairmountpetservice.com/Blog/
+
+https://fairmountpetservice.com/Blog/my-account/
+Redirect 301 /my-account/ https://fairmountpetservice.com/Blog/
+RedirectMatch 301 /my-account/ https://fairmountpetservice.com/Blog/
+
+https://fairmountpetservice.com/Blog/products/
+Redirect 301 /products/ https://fairmountpetservice.com/Blog/
+RedirectMatch 301 /products/ https://fairmountpetservice.com/Blog/
+```
+
+I had one already done with `RedirectMatch`: 
+
+```
+https://fairmountpetservice.com/Blog/shop/
+RedirectMatch 301 /shop/ https://fairmountpetservice.com/Blog/
+```
