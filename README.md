@@ -95,6 +95,12 @@ RedirectMatch 301 /shop-3/ https://twoaveragegamers.com/
 # BEGIN WordPress
 ```
 
+And I have this commented line before the start of my redirects:
+
+```
+## WOOCOMMERCE AND STRIPE MANUAL REDIRECTS ##
+```
+
 Here are the redirects for my pet service site, both versions:
 
 ```
