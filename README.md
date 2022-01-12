@@ -153,10 +153,10 @@ Looks like the uninstall.php file is doing the following things:
 8. delete woo records in the usermeta table line 62 
 9. delete posts and data (posts, postmeta, comments, commentsmeta) starting on line 65
 10. conditional delete of taxonomies & attributes if > WP version 4.2, line 75 (2 lines directly below): 
-   1. foreach delete of term taxonomies line 77
-   2. foreach delete of term attributes line 87
-11 delete orphan records, terms, and term meta line 96
-12. wp_cache_flush line 109
+11. foreach delete of term taxonomies line 77
+12. foreach delete of term attributes line 87
+13. delete orphan records, terms, and term meta line 96
+14. wp_cache_flush line 109
 
 ## MySQL queries to check for Woocommerce fields
 
