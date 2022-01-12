@@ -89,6 +89,12 @@ RedirectMatch 301 /shop-2/ https://twoaveragegamers.com/
 RedirectMatch 301 /shop-3/ https://twoaveragegamers.com/
 ```
 
+**Note**: My redirects are placed directly above the line:
+
+```
+# BEGIN WordPress
+```
+
 Here are the redirects for my pet service site, both versions:
 
 ```
