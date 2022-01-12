@@ -101,7 +101,7 @@ And I have this commented line before the start of my redirects:
 ## WOOCOMMERCE AND STRIPE MANUAL REDIRECTS ##
 ```
 
-Here are the redirects for my pet service site, both versions:
+Here are the redirects for my pet service site (both versions):
 
 ```
 https://fairmountpetservice.com/Blog/cart/
@@ -152,10 +152,11 @@ Looks like the uninstall.php file is doing the following things:
 7. delete woo records in the options table lines 58 & 59
 8. delete woo records in the usermeta table line 62 
 9. delete posts and data (posts, postmeta, comments, commentsmeta) starting on line 65
-10. conditional dete for earlier versions of WP 
-11. foreach delete of term attributes
-12. delete orphan records, terms, and term meta
-13. wp_cache_flush
+10. conditional delete of taxonomies & attributes if > WP version 4.2, line 75 (2 lines directly below): 
+  1. foreach delete of term taxonomies line 77
+  2. foreach delete of term attributes line 87
+11 delete orphan records, terms, and term meta line 96
+12. wp_cache_flush line 109
 
 ## MySQL queries to check for Woocommerce fields
 
