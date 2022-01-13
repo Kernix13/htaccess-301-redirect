@@ -21,14 +21,14 @@ Is Bluehost running on Apache or a different server?
 
 This is the basic format from CSS Tricks [301 Redirects article](https://css-tricks.com/snippets/htaccess/301-redirects/)  (Apache servers only):
 
-```
+```apacheconf
 Redirect 301 /oldpage.html http://www.yoursite.com/newpage.html
 Redirect 301 /oldpage2.html http://www.yoursite.com/folder/
 ```
 
 On Siteground I have the following examples where Siteground added the `RedirectMatch` redirects from the redirect tool in cPanel:
 
-```
+```apacheconf
 RedirectMatch 301 /Blog/pet-services-blog/pet-business/online-business-listing-review-sites-pet-business/ /Blog/category/pet-services-blog/pet-business/
 RedirectMatch 301 /oldpage2.html http://www.yoursite.com/folder/
 
