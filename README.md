@@ -172,7 +172,7 @@ The last 2 SQL statements are just to run individual queries, but then you proab
 
 Here is an example of SQL statements to manually delete the recor from the `options` and `usermeta` tables:
 
-```
+```sql
 DELETE * FROM `wpaa_options` WHERE option_name LIKE 'woocommerce\_%' OR option_name LIKE 'widget\_woocommerce\_%'
 DELETE * FROM `wpaa_options` WHERE option_name LIKE 'woocommerce\_%'
 DELETE * FROM `wpaa_options` WHERE option_name LIKE 'widget\_woocommerce\_%'
