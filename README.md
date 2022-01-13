@@ -170,6 +170,15 @@ SELECT * FROM `wpaa_options` WHERE option_name LIKE 'widget\_woocommerce\_%'
 
 The last 2 SQL statements are just to run individual queries, but then you proabably know that if you know how to run queries in phpmyadmin. I had 127 records in total when I ran the combined query. Then I commented out the snippet in `wp-config.php`, installed Woo, un-commented the code in config, and finally deactivated and removed Woo. I ran the query again and it returned **ZERO** records.
 
+Here is an example of SQL statements to manually delete the recor from the `options` and `usermeta` tables:
+
+```
+DELETE * FROM `wpaa_options` WHERE option_name LIKE 'woocommerce\_%' OR option_name LIKE 'widget\_woocommerce\_%'
+DELETE * FROM `wpaa_options` WHERE option_name LIKE 'woocommerce\_%'
+DELETE * FROM `wpaa_options` WHERE option_name LIKE 'widget\_woocommerce\_%'
+SELECT * FROM `wpaa_usermeta`
+```
+
 So the removal process ran the code snippet in the config file most likely because it is hooking onto the deactivation and removal of the plugin. If you remove the plugin before adding the coee snippet then there is nothing to hook onto.
 
 ## IMPORTANT NOTE
