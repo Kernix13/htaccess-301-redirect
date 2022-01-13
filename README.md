@@ -9,7 +9,7 @@
 
 > To fully remove all WooCommerce data from your WordPress site, open your site’s `wp-config.php` file. Scroll down until you fine the the bottom, add the following constant on its own line above the “That’s all, stop editing” comment.
 
-```
+```php
 define( 'WC_REMOVE_ALL_DATA', true );
 /* That’s all, stop editing! Happy publishing. */ 
 ```
@@ -56,7 +56,7 @@ https://twoaveragegamers.com/shop-3/
 
 Standard formatted 301's:
 
-```
+```apacheconf
 Redirect 301 /cart/ https://twoaveragegamers.com/
 Redirect 301 /cart-2/ https://twoaveragegamers.com/
 Redirect 301 /cart-3/ https://twoaveragegamers.com/
@@ -73,7 +73,7 @@ Redirect 301 /shop-3/ https://twoaveragegamers.com/
 
 Try the `RedirectMatch` replacement if it doesn't take:
 
-```
+```apacheconf
 RedirectMatch 301 /cart/ https://twoaveragegamers.com/
 RedirectMatch 301 /cart-2/ https://twoaveragegamers.com/
 RedirectMatch 301 /cart-3/ https://twoaveragegamers.com/
@@ -91,13 +91,13 @@ RedirectMatch 301 /shop-3/ https://twoaveragegamers.com/
 
 **Note**: My redirects are placed directly above the line:
 
-```
+```apacheconf
 # BEGIN WordPress
 ```
 
 And I have this commented line before the start of my redirects:
 
-```
+```apacheconf
 ## WOOCOMMERCE AND STRIPE MANUAL REDIRECTS ##
 ```
 
@@ -170,14 +170,15 @@ SELECT * FROM `wpaa_options` WHERE option_name LIKE 'widget\_woocommerce\_%'
 
 The last 2 SQL statements are just to run individual queries, but then you proabably know that if you know how to run queries in phpmyadmin. I had 127 records in total when I ran the combined query. Then I commented out the snippet in `wp-config.php`, installed Woo, un-commented the code in config, and finally deactivated and removed Woo. I ran the query again and it returned **ZERO** records.
 
-Here is an example of SQL statements to manually delete the recor from the `options` and `usermeta` tables:
+Here is an example of SQL statements to manually delete the recor from the `options` table:
 
 ```sql
 DELETE * FROM `wpaa_options` WHERE option_name LIKE 'woocommerce\_%' OR option_name LIKE 'widget\_woocommerce\_%'
 DELETE * FROM `wpaa_options` WHERE option_name LIKE 'woocommerce\_%'
 DELETE * FROM `wpaa_options` WHERE option_name LIKE 'widget\_woocommerce\_%'
-SELECT * FROM `wpaa_usermeta`
 ```
+
+
 
 So the removal process ran the code snippet in the config file most likely because it is hooking onto the deactivation and removal of the plugin. If you remove the plugin before adding the coee snippet then there is nothing to hook onto.
 
